@@ -1,4 +1,5 @@
 @import "./inter.css";
+@import "./poppins.css";
 
 .font-poppins {
 	font-family: "Poppins";
@@ -6,6 +7,21 @@
 
 .font-inter {
 	font-family: "Inter";
+}
+
+@font-face {
+	font-family: Sharkey;
+	font-style: normal;
+	font-weight: 500;
+	src: local("Sharkey"),
+		url("~/assets/fonts/sharkey.ttf") format("opentype");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+	font-display: swap;
+}
+
+.font-sharkey {
+	font-family: "Sharkey";
 }
 
 * {

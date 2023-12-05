@@ -12,6 +12,7 @@ onMounted(() => {
 	const elements = document.querySelectorAll(".tilt");
 
 	elements.forEach(element => {
+		// @ts-ignore
 		VanillaTilt.init(element, {
 			max: 2,
 			speed: 400,
@@ -25,6 +26,7 @@ onUnmounted(() => {
 	const elements = document.querySelectorAll(".tilt");
 
 	elements.forEach(element => {
+		// @ts-ignore
 		element.vanillaTilt.destroy();
 	});
 });
@@ -48,8 +50,7 @@ onUnmounted(() => {
 				<div class="flex lg:hidden">
 					<button
 						type="button"
-						class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-						@click="mobileMenuOpen = true">
+						class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
 						<span class="sr-only">Open main menu</span>
 						<Bars3Icon class="h-6 w-6" aria-hidden="true" />
 					</button>
@@ -104,7 +105,7 @@ onUnmounted(() => {
 				<div class="mx-auto max-w-7xl px-6 lg:px-8">
 					<div class="mx-auto max-w-2xl text-center">
 						<h1
-							class="text-4xl font-bold tracking-tight text-transparent bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text sm:text-7xl">
+							class="text-4xl font-sharkey pb-4 font-bold tracking-tight text-transparent bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text sm:text-7xl">
 							Sharkey
 						</h1>
 						<div
