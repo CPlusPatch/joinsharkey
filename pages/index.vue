@@ -1,10 +1,33 @@
 <script setup lang="ts">
+import VanillaTilt from "vanilla-tilt";
+
 const navigation = [
 	{ name: "Gay", href: "#" },
 	{ name: "Taxes", href: "#" },
 	{ name: "Homosex", href: "#" },
 	{ name: "Succubi", href: "#" },
 ];
+
+onMounted(() => {
+	const elements = document.querySelectorAll(".tilt");
+
+	elements.forEach(element => {
+		VanillaTilt.init(element, {
+			max: 2,
+			speed: 400,
+			glare: true,
+			"max-glare": 0.4,
+		});
+	});
+});
+
+onUnmounted(() => {
+	const elements = document.querySelectorAll(".tilt");
+
+	elements.forEach(element => {
+		element.vanillaTilt.destroy();
+	});
+});
 </script>
 
 <template>
@@ -44,7 +67,7 @@ const navigation = [
 					<a
 						href="#"
 						class="text-sm font-semibold leading-6 text-gray-900"
-						>Join TransFem.org</a
+						>Find Servers</a
 					>
 				</div>
 			</nav>
@@ -85,7 +108,7 @@ const navigation = [
 							Sharkey
 						</h1>
 						<div
-							class="px-4 py-3 mt-10 flex flex-col text-base text-gray-800 gap-y-6 max-w-xl mx-auto rounded-md ring-2 ring-gray-700/5 text-left bg-white/40 backdrop-blur-xl">
+							class="px-4 tilt py-3 mt-10 flex flex-col text-base text-gray-800 gap-y-6 max-w-xl mx-auto rounded-md ring-2 ring-gray-700/5 text-left bg-white/40 backdrop-blur-xl">
 							<p class="">
 								Sharkey is an upstream fork of Misskey that
 								promises to deliver an improved feature set and
@@ -104,13 +127,13 @@ const navigation = [
 							<a
 								href="#"
 								class="rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
-								>Sign up on TransFem.org</a
+								>Find Servers</a
 							>
 						</div>
 					</div>
 					<div class="mt-16 flow-root sm:mt-24">
 						<div
-							class="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+							class="-m-2 rounded-xl bg-gray-900/5 tilt p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
 							<img
 								src="https://joinsharkey.org/assets/hero.png"
 								alt="App screenshot"
